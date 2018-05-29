@@ -1,8 +1,6 @@
-# Zip Compression and Archive API Examples
+# Zip Compression and Archive API - Examples
 
 
-<p>This example contains code snippets used in help articles on Zip Compression and Archive API.<br> For more information see <a href="http://documentation.devexpress.com/#DocumentServer/CustomDocument15261"><u>Documentation Online</u></a>.<br><br>The<strong> Universal Subscription</strong> or an additional <strong>Document Server Subscription</strong> is required to use this example in production code. Please refer to the <a href="http://www.devexpress.com/Subscriptions/">DevExpress Subscription</a> page for pricing information.</p>
+This example contains code snippets used in help articles on [Zip Compression and Archive API](https://documentation.devexpress.com/OfficeFileAPI/15093/Zip-Compression-and-Archive-API).
 
-<br/>
-
-
+The **Universal Subscription** or an additional **Office File API** Subscription is required to use this example in production code. Please refer to the [DevExpress Subscription](https://www.devexpress.com/Buy/NET/) page for pricing information.
