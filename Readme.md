@@ -1,3 +1,8 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [ZipExamples.cs](./CS/CompressionLibraryExamples/ZipExamples.cs) (VB: [ZipExamples.vb](./VB/CompressionLibraryExamples/ZipExamples.vb))
+<!-- default file list end -->
 # Zip Compression and Archive API - Examples
 
 
