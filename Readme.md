@@ -18,6 +18,7 @@ This example contains code snippets that demonstrate the [Zip Compression and Ar
 * Progress tracking mechanism that allows you to cancel archive operations
 
 > **Note**
+>
 > The **Universal Subscription** or an additional **Office File API** Subscription is required to use this example in production code. Please refer to the [DevExpress Subscription](https://www.devexpress.com/Buy/NET/) page for pricing information.
 
 # Files to Look at
