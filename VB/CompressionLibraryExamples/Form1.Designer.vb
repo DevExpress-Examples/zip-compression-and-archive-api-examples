@@ -1,5 +1,7 @@
-﻿Namespace CompressionLibraryExamples
-    Partial Public Class Form1
+Namespace CompressionLibraryExamples
+
+    Partial Class Form1
+
         ''' <summary>
         ''' Required designer variable.
         ''' </summary>
@@ -10,14 +12,14 @@
         ''' </summary>
         ''' <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-            If disposing AndAlso (components IsNot Nothing) Then
-                components.Dispose()
+            If disposing AndAlso (Me.components IsNot Nothing) Then
+                Me.components.Dispose()
             End If
+
             MyBase.Dispose(disposing)
         End Sub
 
-        #Region "Windows Form Designer generated code"
-
+'#Region "Windows Form Designer generated code"
         ''' <summary>
         ''' Required method for Designer support - do not modify
         ''' the contents of this method with the code editor.
@@ -33,7 +35,7 @@
             Me.textBox1.Name = "textBox1"
             Me.textBox1.Size = New System.Drawing.Size(177, 67)
             Me.textBox1.TabIndex = 1
-            Me.textBox1.Text = "This project " & ControlChars.CrLf & "contains sample methods" & ControlChars.CrLf & " to illustrate " & ControlChars.CrLf & "Compression Library API"
+            Me.textBox1.Text = "This project " & Global.Microsoft.VisualBasic.Constants.vbCrLf & "contains sample methods" & Global.Microsoft.VisualBasic.Constants.vbCrLf & " to illustrate " & Global.Microsoft.VisualBasic.Constants.vbCrLf & "Compression Library API"
             Me.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
             ' 
             ' Form1
@@ -46,13 +48,9 @@
             Me.Text = "Form1"
             Me.ResumeLayout(False)
             Me.PerformLayout()
-
         End Sub
 
-        #End Region
-
+'#End Region
         Private textBox1 As System.Windows.Forms.TextBox
-
     End Class
 End Namespace
-
