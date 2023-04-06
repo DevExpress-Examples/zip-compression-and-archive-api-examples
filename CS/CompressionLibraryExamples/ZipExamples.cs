@@ -40,8 +40,10 @@ namespace CompressionLibraryExamples {
         #region #archivefiles
         public void ArchiveFiles() {
             string[] sourcefiles = this.sourceFiles;
+            string[] ext = new string[] {".txt", ".docx"};
             using (ZipArchive archive = new ZipArchive()) {
                 foreach (string file in sourcefiles) {
+                    if (ext.Contains(Path.GetExtension(file)))
                     archive.AddFile(file, "/");
                 }
                 archive.Save("Documents\\ArchiveFiles.zip");
