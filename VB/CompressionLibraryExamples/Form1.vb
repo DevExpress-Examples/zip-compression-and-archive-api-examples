@@ -19,7 +19,7 @@ Namespace CompressionLibraryExamples
 
 		Private Sub InitData()
 			Dim treeDataSource As New MyTreeData(Nothing, Nothing)
-			Dim rootNode1 As New MyTreeData(treeDataSource, New String() { zExamples.GetType().ToString(), "All Examples" })
+			Dim rootNode1 As New MyTreeData(treeDataSource, New String() {zExamples.GetType().ToString(), "All Examples"})
 			For Each mi As MethodInfo In zExamples.GetMethods()
 				If mi.Name = "GetMethods" OrElse mi.Name = "InvokeMethod" Then
 					Continue For
@@ -33,11 +33,6 @@ Namespace CompressionLibraryExamples
 			treeList1.DataSource = treeDataSource
 			treeList1.ExpandAll()
 		End Sub
-
-		'public bool IsRootNode(TreeListNode node) {
-		'    return (node != null) && (node.owner == treeList1.Nodes);
-		'}
-
 		Private Sub treeList1_DoubleClick(ByVal sender As Object, ByVal e As EventArgs) Handles treeList1.DoubleClick
 			If treeList1.FocusedNode IsNot Nothing AndAlso treeList1.FocusedNode.ParentNode IsNot Nothing Then
 				Dim s As String = treeList1.FocusedNode.GetValue(0).ToString()

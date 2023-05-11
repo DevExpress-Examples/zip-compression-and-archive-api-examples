@@ -19,16 +19,7 @@ Namespace CompressionLibraryExamples
 			Me.sourceFiles = sourceFiles
 		End Sub
 
-		Public Function GetMethods() As MethodInfo()
-			Return Me.GetType().GetMethods(BindingFlags.Public Or BindingFlags.Instance Or BindingFlags.DeclaredOnly)
-		End Function
-
-		Public Sub InvokeMethod(ByVal methodName As String, ByVal args As List(Of Object))
-			Me.GetType().GetMethod(methodName).Invoke(Me, args.ToArray())
-		End Sub
-
-
-		#Region "#archivedirectory"
+#Region "#archivedirectory"
 		Public Sub ArchiveDirectory()
 			Dim path As String = Me.startupPath
 			Using archive As New ZipArchive()
@@ -36,9 +27,9 @@ Namespace CompressionLibraryExamples
 				archive.Save("Documents\ArchiveDirectory.zip")
 			End Using
 		End Sub
-		#End Region ' #archivedirectory
+#End Region ' #archivedirectory
 
-		#Region "#archivefiles"
+#Region "#archivefiles"
 		Public Sub ArchiveFiles()
 			Dim sourcefiles() As String = Me.sourceFiles
 			Using archive As New ZipArchive()
@@ -48,9 +39,9 @@ Namespace CompressionLibraryExamples
 				archive.Save("Documents\ArchiveFiles.zip")
 			End Using
 		End Sub
-		#End Region ' #archivefiles
+#End Region ' #archivefiles
 
-		#Region "#archivedirectoryhandlingerrors"
+#Region "#archivedirectoryhandlingerrors"
 		Public Sub ArchiveDirectoryWithError()
 			Dim path As String = Me.startupPath
 			Using archive As New ZipArchive()
@@ -74,12 +65,11 @@ Namespace CompressionLibraryExamples
 				args.CanContinue = False
 			End If
 		End Sub
-		#End Region ' #archivedirectoryhandlingerrors
+#End Region ' #archivedirectoryhandlingerrors
 
-
-		#Region "#filterarchivefiles"
-'INSTANT VB TODO TASK: There is no VB.NET equivalent to 'volatile':
-'ORIGINAL LINE: volatile bool stopArchiving = False;
+#Region "#filterarchivefiles"
+		'INSTANT VB TODO TASK: There is no VB.NET equivalent to 'volatile':
+		'ORIGINAL LINE: volatile bool stopArchiving = False;
 		Private stopArchiving As Boolean = False
 		Public Sub FilterArchiveFiles()
 			Dim sourcefiles() As String = Me.sourceFiles
@@ -100,25 +90,25 @@ Namespace CompressionLibraryExamples
 				args.Action = ZipItemAddingAction.Stop
 			End If
 		End Sub
-		#End Region ' #filterarchivefiles
+#End Region ' #filterarchivefiles
 
-		#Region "#archivefilesbatch"
+#Region "#archivefilesbatch"
 		Public Sub ArchiveFilesBatch()
 			Dim path As String = Me.startupPath
 			Using archive As New ZipArchive()
-				Dim files = _
-					From file In System.IO.Directory.EnumerateFiles(path, "*.xml", System.IO.SearchOption.AllDirectories) , line In System.IO.File.ReadLines(file) _
-					Where line.Contains("DevExpress") _
+				Dim files =
+					From file In System.IO.Directory.EnumerateFiles(path, "*.xml", System.IO.SearchOption.AllDirectories), line In System.IO.File.ReadLines(file)
+					Where line.Contains("DevExpress")
 					Select file
 				archive.AddFiles(files)
 				archive.Save("Documents\ArchiveFilesBatch.zip")
 			End Using
 		End Sub
-		#End Region ' #archivefilesbatch
+#End Region ' #archivefilesbatch
 
-		#Region "#cancelarchiveprogress"
-'INSTANT VB TODO TASK: There is no VB.NET equivalent to 'volatile':
-'ORIGINAL LINE: volatile bool stopProgress = False;
+#Region "#cancelarchiveprogress"
+		'INSTANT VB TODO TASK: There is no VB.NET equivalent to 'volatile':
+		'ORIGINAL LINE: volatile bool stopProgress = False;
 		Private stopProgress As Boolean = False
 
 		Public Sub CancelArchiveProgress()
@@ -135,9 +125,9 @@ Namespace CompressionLibraryExamples
 		Private Sub archive_Progress(ByVal sender As Object, ByVal args As ProgressEventArgs)
 			args.CanContinue = Not Me.stopProgress
 		End Sub
-		#End Region ' #cancelarchiveprogress
+#End Region ' #cancelarchiveprogress
 
-		#Region "#protectpassword"
+#Region "#protectpassword"
 		Public Sub ProtectPassword()
 			Dim sourcefiles() As String = Me.sourceFiles
 			Dim password As String = "123"
@@ -150,9 +140,9 @@ Namespace CompressionLibraryExamples
 				archive.Save("Documents\ProtectPassword.zip")
 			End Using
 		End Sub
-		#End Region ' #protectpassword
+#End Region ' #protectpassword
 
-		#Region "#addcomment"
+#Region "#addcomment"
 		Public Sub ArchiveWithComment()
 			Dim path As String = Me.startupPath
 			Using archive As New ZipArchive()
@@ -164,9 +154,9 @@ Namespace CompressionLibraryExamples
 
 			End Using
 		End Sub
-		#End Region ' #addcomment
+#End Region ' #addcomment
 
-		#Region "#archivestream"
+#Region "#archivestream"
 		Public Sub ArchiveStream()
 			Using myStream As Stream = New MemoryStream(System.Text.Encoding.UTF8.GetBytes("DevExpress"))
 				Using myZippedStream As Stream = New FileStream("Documents\ArchiveStream.zip", System.IO.FileMode.Create)
@@ -177,9 +167,9 @@ Namespace CompressionLibraryExamples
 				End Using
 			End Using
 		End Sub
-		#End Region ' #archivestream
+#End Region ' #archivestream
 
-		#Region "#archivebytearray"
+#Region "#archivebytearray"
 		Public Sub ArchiveByteArray()
 			Dim myByteArray() As Byte = Enumerable.Repeat(CByte(&H78), 10000).ToArray()
 			Using myZippedStream As Stream = New FileStream("Documents\ArchiveByteArray.zip", FileMode.Create)
@@ -189,9 +179,9 @@ Namespace CompressionLibraryExamples
 				End Using
 			End Using
 		End Sub
-		#End Region ' #archivebytearray
+#End Region ' #archivebytearray
 
-		#Region "#unziparchive"
+#Region "#unziparchive"
 		Public Sub UnzipArchive()
 			Dim pathToZipArchive As String = "Documents\Example.zip"
 			Dim pathToExtract As String = "Documents\!Extracted"
@@ -201,9 +191,9 @@ Namespace CompressionLibraryExamples
 				Next item
 			End Using
 		End Sub
-		#End Region ' #unziparchive
+#End Region ' #unziparchive
 
-		#Region "#unziparchiveconflict"
+#Region "#unziparchiveconflict"
 		Public Sub UnzipArchiveConflict()
 			Dim pathToZipArchive As String = "Documents\Example.zip"
 			Dim pathToExtract As String = "Documents\!Extracted"
@@ -222,18 +212,18 @@ Namespace CompressionLibraryExamples
 				e.Cancel = True
 			End If
 		End Sub
-		#End Region ' #unziparchiveconflict
+#End Region ' #unziparchiveconflict
 
-		#Region "#archivetext"
+#Region "#archivetext"
 		Public Sub ArchiveText()
 			Using archive As New ZipArchive()
 				archive.AddText("Text_DE.txt", "Komprimieren großer Dateien mühelos")
 				archive.Save("Documents\ArchiveText.zip")
 			End Using
 		End Sub
-		#End Region ' #archivetext
+#End Region ' #archivetext
 
-		#Region "#addfiletoarchive"
+#Region "#addfiletoarchive"
 		Public Sub AddFileToArchive()
 			Dim stream As New MemoryStream()
 			Dim sourcefiles() As String = Me.sourceFiles
@@ -251,6 +241,16 @@ Namespace CompressionLibraryExamples
 				archive.Save(pathToZipArchive)
 			End Using
 		End Sub
-		#End Region ' #addfiletoarchive
+#End Region ' #addfiletoarchive
+
+#Region "#Invoke_Methods"
+		Public Function GetMethods() As MethodInfo()
+			Return Me.GetType().GetMethods(BindingFlags.Public Or BindingFlags.Instance Or BindingFlags.DeclaredOnly)
+		End Function
+
+		Public Sub InvokeMethod(ByVal methodName As String, ByVal args As List(Of Object))
+			Me.GetType().GetMethod(methodName).Invoke(Me, args.ToArray())
+		End Sub
+#End Region '#Invoke_Methods
 	End Class
 End Namespace

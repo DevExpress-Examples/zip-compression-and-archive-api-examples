@@ -31,10 +31,6 @@ namespace CompressionLibraryExamples {
             treeList1.ExpandAll();
         }
 
-        //public bool IsRootNode(TreeListNode node) {
-        //    return (node != null) && (node.owner == treeList1.Nodes);
-        //}
-
         private void treeList1_DoubleClick(object sender, EventArgs e) {
             if(treeList1.FocusedNode != null && treeList1.FocusedNode.ParentNode != null) {
                 string s = treeList1.FocusedNode.GetValue(0).ToString();

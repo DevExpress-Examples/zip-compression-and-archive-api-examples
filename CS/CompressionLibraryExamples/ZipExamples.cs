@@ -17,16 +17,6 @@ namespace CompressionLibraryExamples {
             this.startupPath = startupPath;
             this.sourceFiles = sourceFiles;
         }
-
-        public MethodInfo[] GetMethods() {
-            return GetType().GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
-        }
-
-        public void InvokeMethod(string methodName, List<object> args) {
-            GetType().GetMethod(methodName).Invoke(this, args.ToArray());
-        }
-
-
         #region #archivedirectory
         public void ArchiveDirectory() {
             string path = this.startupPath;
@@ -77,7 +67,6 @@ namespace CompressionLibraryExamples {
             }
         }
         #endregion #archivedirectoryhandlingerrors
-
 
         #region #filterarchivefiles
         volatile bool stopArchiving = false;
@@ -246,5 +235,17 @@ namespace CompressionLibraryExamples {
             }
         }
         #endregion #addfiletoarchive
+
+        #region #Invoke_Methods
+        public MethodInfo[] GetMethods()
+        {
+            return GetType().GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+        }
+
+        public void InvokeMethod(string methodName, List<object> args)
+        {
+            GetType().GetMethod(methodName).Invoke(this, args.ToArray());
+        }
+        #endregion #InvokeMethods
     }
 }
