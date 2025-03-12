@@ -18,8 +18,7 @@ This example contains code snippets that demonstrate the [Zip Compression and Ar
 * Filter files to process
 * Progress tracking mechanism that allows you to cancel archive operations
 
-> **Note**
->
+> [!NOTE]>
 > The **Universal Subscription** or an additional **Office File API** Subscription is required to use this example in production code. Please refer to the [DevExpress Subscription](https://www.devexpress.com/Buy/NET/) page for pricing information.
 
 # Files to Look at
@@ -29,6 +28,7 @@ This example contains code snippets that demonstrate the [Zip Compression and Ar
 # Documentation
 
 * [Zip Compression and Archive API Examples](https://docs.devexpress.com/OfficeFileAPI/15261/zip-compression-and-archive-api/examples)
+
 <!-- feedback -->
 ## Does this example address your development requirements/objectives?
 

@@ -5,12 +5,13 @@ Imports System.Collections.Generic
 Imports System.Reflection
 Imports System.Windows.Forms
 Imports DevExpress.XtraTreeList.Nodes
+Imports DevExpress.Utils.About
 
 Namespace CompressionLibraryExamples
 	Partial Public Class Form1
 		Inherits DevExpress.XtraEditors.XtraForm
 		Private Shared startupPath As String = Application.StartupPath
-		Private zExamples As New ZipExamples(startupPath, New String() { Application.ExecutablePath, "Documents\SampleDocument.docx" })
+		Private zExamples As New ZipExamples(startupPath, New String() {Application.ExecutablePath, "Documents\SampleDocument.docx"})
 
 		Public Sub New()
 			InitializeComponent()
@@ -39,7 +40,7 @@ Namespace CompressionLibraryExamples
 				Cursor.Current = Cursors.WaitCursor
 				zExamples.InvokeMethod(s, New List(Of Object)())
 				Cursor.Current = Cursors.Default
-				System.Diagnostics.Process.Start(startupPath & "\Documents")
+				System.Diagnostics.Process.Start(New ProcessStartInfo(startupPath & "\Documents") With {.UseShellExecute = True})
 			End If
 		End Sub
 	End Class

@@ -37,7 +37,7 @@ namespace CompressionLibraryExamples {
                 Cursor.Current = Cursors.WaitCursor;
                 zExamples.InvokeMethod(s, new List<object>());
                 Cursor.Current = Cursors.Default;
-                System.Diagnostics.Process.Start(startupPath + "\\Documents");
+                System.Diagnostics.Process.Start( new System.Diagnostics.ProcessStartInfo (startupPath + "\\Documents") { UseShellExecute = true });
             }
         }
     }
