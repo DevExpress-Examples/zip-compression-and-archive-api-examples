@@ -30,7 +30,7 @@ This example contains code snippets that demonstrate the [Zip Compression and Ar
 * [Zip Compression and Archive API Examples](https://docs.devexpress.com/OfficeFileAPI/15261/zip-compression-and-archive-api/examples)
 
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=zip-compression-and-archive-api-examples&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=zip-compression-and-archive-api-examples&~~~was_helpful=no)
 
